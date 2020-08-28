@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit {
 
   onSubmit(form: NgForm) {
 
-    if (!form.valid) return;
+    if (!form.valid) { return; }
 
     const email = form.value.email;
     const password = form.value.password;
@@ -52,11 +52,15 @@ export class AuthComponent implements OnInit {
       },
       errorMessage => {
         console.log(errorMessage)
-        this.error = errorMessage
+        this.error = errorMessage;
         this.isLoading = false;
       });
 
     form.reset()
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 
 }
