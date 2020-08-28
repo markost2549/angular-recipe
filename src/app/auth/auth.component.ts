@@ -15,7 +15,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
-  @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective; // ,{static: false} for Angular 8
+  @ViewChild(PlaceholderDirective, { static: false }) alertHost: PlaceholderDirective; // ,{static: false} for Angular 8
 
   private closeSub: Subscription;
 
