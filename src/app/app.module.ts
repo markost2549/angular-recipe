@@ -27,14 +27,14 @@ import { RecipesModule } from "./recipes/recipes.module";
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
-    PlaceholderDirective
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     RecipesModule,
   ],
   providers: [ShoppingListService, RecipeService,
