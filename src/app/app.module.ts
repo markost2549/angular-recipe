@@ -16,13 +16,12 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AlertComponent } from "./shared/alert/alert.component";
 import { PlaceholderDirective } from "./shared/placeholder/placeholder.directive";
 import { RecipesModule } from "./recipes/recipes.module";
+import { ShoppingListModule } from "./shopping-list/shopping-list.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     DropdownDirective,
     AuthComponent,
     LoadingSpinnerComponent,
@@ -36,6 +35,7 @@ import { RecipesModule } from "./recipes/recipes.module";
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
+    ShoppingListModule,
   ],
   providers: [ShoppingListService, RecipeService,
     {
