@@ -13,7 +13,6 @@ import { AuthModule } from './auth/auth.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,6 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     SharedModule,
     CoreModule,
-    AuthModule,
   ],
   bootstrap: [AppComponent],
 
