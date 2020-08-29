@@ -8,18 +8,18 @@ import { environment } from '../../environments/environment';
 
 
 export interface AuthResponseData {
-    idToken: string,
-    email: string,
-    refreshToken: string,
-    expiresIn: string,
-    localId: string,
-    registered?: boolean,
+    idToken: string;
+    email: string;
+    refreshToken: string;
+    expiresIn: string;
+    localId: string;
+    registered?: boolean;
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-    //userSub = new Subject<User>();
+    // userSub = new Subject<User>();
     userSub = new BehaviorSubject<User>(null);
 
     private tokenExpTimer: any;
@@ -43,8 +43,8 @@ export class AuthService {
                     resData.localId,
                     resData.idToken,
                     +resData.expiresIn,
-                )
-            }))
+                );
+            }));
     }
 
     login(email: string, password: string) {
@@ -61,8 +61,8 @@ export class AuthService {
                     resData.localId,
                     resData.idToken,
                     +resData.expiresIn,
-                )
-            }))
+                );
+            }));
     }
 
     autoLogin() {
@@ -102,8 +102,8 @@ export class AuthService {
 
     autoLogout(expirationDuration: number) {
         const tokenExpTimer = setTimeout(() => {
-            this.logout()
-        }, expirationDuration)
+            this.logout();
+        }, expirationDuration);
     }
 
 
@@ -111,14 +111,14 @@ export class AuthService {
         const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
         const user = new User(email, userId, token, expirationDate);
         this.userSub.next(user);
-        this.autoLogout(expiresIn * 1000)
-        localStorage.setItem('userData', JSON.stringify(user))
+        this.autoLogout(expiresIn * 1000);
+        localStorage.setItem('userData', JSON.stringify(user));
     }
 
     private handleError(errorRes: HttpErrorResponse) {
         let errorMessage = 'An unknown message occurred!';
         if (!errorRes.error || !errorRes.error.error) {
-            return throwError(errorMessage)
+            return throwError(errorMessage);
         }
         switch (errorRes.error.error.message) {
             case 'EMAIL_EXISTS':
@@ -129,7 +129,7 @@ export class AuthService {
                 errorMessage = 'Invaid username or password';
                 break;
             case 'USER_DISABLED':
-                errorMessage = 'The user account has been disabled by an administrator.'
+                errorMessage = 'The user account has been disabled by an administrator.';
                 break;
         }
 
