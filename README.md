@@ -1,4 +1,6 @@
-# MyFirstApp
+# Angular Recipe App
+
+A simple CRUD application, using Google Firebase for authentication and database. When you register and login you can get data from the database (manage -> fetch data).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
